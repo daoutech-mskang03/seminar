@@ -85,3 +85,6 @@ class MyProcessScheduler(BaseScheduler):
             self.process.terminate()
             self.process.join()
         self.log("Process Scheduler가 종료되었습니다.")
+
+    def get_jobs(self):
+        return self.tasks

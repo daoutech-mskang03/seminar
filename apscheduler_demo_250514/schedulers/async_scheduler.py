@@ -28,3 +28,6 @@ class MyAsyncScheduler(BaseScheduler):
     def shutdown(self):
         self.scheduler.shutdown()
         self.log("AsyncIOScheduler가 종료되었습니다.")
+
+    def get_jobs(self):
+        return self.tasks

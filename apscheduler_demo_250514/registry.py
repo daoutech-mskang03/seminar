@@ -38,4 +38,6 @@ class SchedulerRegistry:
         """등록된 스케줄러 목록 조회 메서드"""
         logger.info("등록된 스케줄러 목록:")
         for name, scheduler in self.schedulers.items():
-            logger.info(f"- {name}: {scheduler.__class__.__name__}")
+            logger.info(f"* {name}: {scheduler.__class__.__name__}")
+            for task in scheduler.get_jobs():
+                logger.info(f"  - 태스크: {task.name}, 주기: {task.interval}초")

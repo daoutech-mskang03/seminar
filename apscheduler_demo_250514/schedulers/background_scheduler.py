@@ -30,3 +30,6 @@ class MyBackgroundScheduler(BaseScheduler):
     def shutdown(self):
         self.scheduler.shutdown()
         self.log("BackgroundScheduler가 종료되었습니다.")
+
+    def get_jobs(self):
+        return self.tasks

@@ -38,6 +38,11 @@ class BaseScheduler(ABC):
         """스케줄러 종료"""
         pass
 
+    @abstractmethod
+    def get_jobs(self):
+        """스케줄러의 모든 작업 조회"""
+        pass
+
     def log(self, message: str):
         """로그 출력"""
         self.logger.info(f"[{self.name}] {message}")
